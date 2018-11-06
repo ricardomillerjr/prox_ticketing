@@ -47,6 +47,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -109,12 +110,33 @@ public class UserPageController implements Initializable {
     private Label lblprevnum;
     @FXML
     private Label lblprevlane;
+    @FXML
+    private Button employed_sector;
+    @FXML
+    private Button indigent;
+    @FXML
+    private Button membership;
+    @FXML
+    private Button special_lane;
+    @FXML
+    private Button call_supervisor;
+    @FXML
+    private FontAwesomeIconView call_sepico;
+    @FXML
+    private Button cashier;
+    @FXML
+    private FontAwesomeIconView homebtn_ico;
+    @FXML
+    private Button misclleaneous;
+    @FXML
+    private Button contri;
 
     protected String Now() {
         SimpleDateFormat SimpleDateFormmatter = new SimpleDateFormat("hh:mm:ss a");
         java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
         return SimpleDateFormmatter.format(sqlDate);
     }
+    @FXML
     private AnchorPane root_anchorpane;
     @FXML
     private Label lbltime;
@@ -267,31 +289,26 @@ public class UserPageController implements Initializable {
         validate_table(userid);
     }
 
-    @FXML
     private void OnClickOR(ActionEvent event) throws JRException {
         System.out.println(fdescrip.get(1) + " " + flane.get(1));
         load_dd(flane.get(1), puser.getUserid(), fdescrip.get(1));
     }
 
-    @FXML
     private void OnClickOP(ActionEvent event) throws JRException {
         System.out.println(fdescrip.get(0) + " " + flane.get(0));
         load_dd(flane.get(0), puser.getUserid(), fdescrip.get(0));
     }
 
-    @FXML
     private void onClickPP(ActionEvent event) throws JRException {
         System.out.println(fdescrip.get(2) + " " + flane.get(2));
         load_dd(flane.get(2), puser.getUserid(), fdescrip.get(2));
     }
 
-    @FXML
     private void onClickPR(ActionEvent event) throws JRException {
         System.out.println(fdescrip.get(3) + " " + flane.get(3));
         load_dd(flane.get(3), puser.getUserid(), fdescrip.get(3));
     }
 
-    @FXML
     private void OnClickBlk(ActionEvent event) throws JRException {
         System.out.println(flane.get(4) + " " + fdescrip.get(4));
         load_dd(flane.get(4), puser.getUserid(), fdescrip.get(4));
@@ -401,6 +418,34 @@ public class UserPageController implements Initializable {
             stage.close();
             System.exit(0);
         }
+    }
+
+    @FXML
+    private void OnClickER2(ActionEvent event) {
+    }
+
+    @FXML
+    private void onClickSPU(ActionEvent event) {
+    }
+
+    @FXML
+    private void OnClickIPM(ActionEvent event) {
+    }
+
+    @FXML
+    private void OnClickLMP(ActionEvent event) {
+    }
+
+    @FXML
+    private void onClickCashier(ActionEvent event) {
+    }
+
+    @FXML
+    private void OnClickMISC(ActionEvent event) {
+    }
+
+    @FXML
+    private void OnClickCONTRI(ActionEvent event) {
     }
 
 }
